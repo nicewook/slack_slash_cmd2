@@ -1,0 +1,9 @@
+github.com/0xAX/notificator v0.0.0-20181105090803-d81462e38c21/go.mod h1:NtXa9WwQsukMHZpjNakTTz0LArxvGYdPA9CjIcUSZ6s=
+github.com/codegangsta/envy v0.0.0-20141216192214-4b78388c8ce4/go.mod h1:X7wHz0C25Lga6CnJ4WAQNbUQ9P/8eWSNv8qIO71YkSM=
+github.com/codegangsta/gin v0.0.0-20171026143024-cafe2ce98974/go.mod h1:UBYuwaH3dMw91EZ7tGVaFF6GDj5j46S7zqB9lZPIe58=
+github.com/julienschmidt/httprouter v1.2.0 h1:TDTW5Yz1mjftljbcKqRcrYhd4XeOoI98t+9HbQbYf7g=
+github.com/julienschmidt/httprouter v1.2.0/go.mod h1:SYymIcj16QtmaHHD7aYtjjsJG7VTCxuUUipMqKk8s4w=
+github.com/mattn/go-shellwords v1.0.3/go.mod h1:3xCvwCdWdlDJUrvuMn7Wuy9eWs4pE8vqg+NOMyg4B2o=
+github.com/nicewook/slack_slash_cmd v0.0.0-20190219040229-3474debf8b02 h1:kOCaM2NhR7Jr0qvwHzPyKPsdACIhbR9m9UdcqOzwtZA=
+github.com/nicewook/slack_slash_cmd v0.0.0-20190219040229-3474debf8b02/go.mod h1:2lGckX59s0sYdH3UsAJlU/t/ztZQpUrAA6MwelYp/ds=
+gopkg.in/urfave/cli.v1 v1.20.0/go.mod h1:vuBzUtMdQeixQj8LVd+/98pzhxNGQoyuPBlsXHOQNO0=
