@@ -7,7 +7,8 @@ import (
 	"os"
 
 	"github.com/julienschmidt/httprouter"
-	"github.com/nicewook/slack_slash_cmd2/slack/slash"
+	"github.com/nicewook/slack_slash_cmd2/slack"
+	//"github.com/nicewook/slack_slash_cmd/version2/slash"
 )
 
 func index(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
@@ -36,7 +37,7 @@ func main() {
 
 	r := httprouter.New()
 	r.GET("/", index)
-	r.POST("/slash", slash.Handler)
+	r.POST("/slash", slack.Handler)
 
 	fmt.Println("[INFO] Server listening")
 	log.Fatal(http.ListenAndServe("", r))
