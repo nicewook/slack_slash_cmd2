@@ -1,4 +1,4 @@
-package slack
+package slack2
 
 import (
 	"bytes"

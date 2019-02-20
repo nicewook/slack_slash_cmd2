@@ -7,8 +7,8 @@ import (
 	"os"
 
 	"github.com/julienschmidt/httprouter"
-	"github.com/nicewook/slack_slash_cmd2/slack"
-	//"github.com/nicewook/slack_slash_cmd/version2/slash"
+	"github.com/nicewook/slack_slash_cmd2/slack2"
+	// "github.com/nicewook/slack_slash_cmd2/slack"
 )
 
 func index(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
@@ -33,11 +33,12 @@ func main() {
 		port = "8080"
 	}
 
-	slack.slackSigningToken = mustLookupEnv("SLACK_SIGNING_SECRET")
+	sst := mustLookupEnv("SLACK_SIGNING_SECRET")
+	slack2.slackSigningToken = sst
 
 	r := httprouter.New()
 	r.GET("/", index)
-	r.POST("/slash", slack.Handler)
+	r.POST("/slash", slack2.Handler)
 
 	fmt.Println("[INFO] Server listening")
 	log.Fatal(http.ListenAndServe("", r))

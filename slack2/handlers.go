@@ -1,11 +1,10 @@
-package slack
+package slack2
 
 import (
 	"fmt"
 	"net/http"
 
 	"github.com/julienschmidt/httprouter"
-	"github.com/nicewook/slack_slash_cmd2/slack"
 )
 
 var slackSigningToken string
@@ -15,7 +14,7 @@ var slackSigningToken string
 func Handler(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 
 	// verify token - compare received r's TOKEN and server' slackSigning Token
-	if ok := slack.VerifyRequest(r, []byte(slackSigningToken)); ok == false {
+	if ok := VerifyRequest(r, []byte(slackSigningToken)); ok == false {
 		w.WriteHeader(http.StatusInternalServerError)
 		return
 	}
