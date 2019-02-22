@@ -2,26 +2,32 @@ package slack2
 
 import (
 	"fmt"
+	"log"
 	"net/http"
 
 	"github.com/julienschmidt/httprouter"
 )
 
-var slackSigningToken string
+// SlackSigningToken get environment variable value
+var SlackSigningToken string
 
 // Handler deals with slash commands
 // Check HTTP Request and ParseForm()
 func Handler(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 
 	// verify token - compare received r's TOKEN and server' slackSigning Token
-	if ok := VerifyRequest(r, []byte(slackSigningToken)); ok == false {
+	if ok := VerifyRequest(r, []byte(SlackSigningToken)); ok == false {
 		w.WriteHeader(http.StatusInternalServerError)
+		log.Fatalf("VerifyRequest()")
+		fmt.Println("VerifyRequest()")
 		return
 	}
 
 	err := r.ParseForm()
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
+		log.Fatalf("r.ParseForm()")
+		fmt.Println("r.ParseForm()")
 		return
 	}
 

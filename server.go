@@ -15,7 +15,7 @@ func index(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 	fmt.Fprint(w, "Welcome, I'm Timebot\nI can convert KST <-> PST/PDT")
 }
 
-//var slackSigningToken string
+//var SlackSigningToken string
 
 func mustLookupEnv(env string) string {
 	ret, ok := os.LookupEnv(env)
@@ -34,7 +34,7 @@ func main() {
 	}
 
 	sst := mustLookupEnv("SLACK_SIGNING_SECRET")
-	slack2.slackSigningToken = sst
+	slack2.SlackSigningToken = sst
 
 	r := httprouter.New()
 	r.GET("/", index)
